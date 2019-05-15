@@ -1,0 +1,14 @@
+.animated-list {
+  max-height: 600px;
+  width: 400px;
+  overflow: auto;
+  background-color: #fff;
+  padding: 16px;
+  position: relative;
+}
+
+.item-container {
+  /* height: 70px; */
+  position: relative;
+  z-index: 1;
+}

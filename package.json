@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "core-js": "^3.0.1",
+    "faker": "^4.1.0",
+    "lodash": "^4.17.11",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
@@ -33,6 +36,7 @@
     ]
   },
   "devDependencies": {
-    "@cr4zyc4t/eslint-config-common": "^1.0.2"
+    "@cr4zyc4t/eslint-config-common": "^1.0.2",
+    "@types/react": "^16.8.17"
   }
 }
