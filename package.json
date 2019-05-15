@@ -5,7 +5,8 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "react-spring": "^8.0.20"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -14,7 +15,10 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "@cr4zyc4t/common"
+    ]
   },
   "browserslist": {
     "production": [
@@ -27,5 +31,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@cr4zyc4t/eslint-config-common": "^1.0.2"
   }
 }
