@@ -10,7 +10,7 @@ import findIndex from "lodash/findIndex";
 const defaultList = range(20).map((v, i) => {
   return {
     title: `${i}.${faker.name.findName()}`,
-    id: `id${i}`,
+    id: i,
     show: true,
   };
 });
@@ -52,15 +52,13 @@ export default function AnimatedList() {
   const transitions = useTransition(list, item => item.id, {
     from: {
       height: 0,
-      // opacity: 1,
+      opacity: 0,
     },
     enter: [
-      { height: 75 },
-      // { opacity: 1 },
+      { height: 70, opacity: 0.4 },
     ],
     leave: [
-      { height: 0 },
-      // { opacity: 0 },
+      { height: 0, opacity: 0 },
     ],
     unique: true,
   });
@@ -76,14 +74,16 @@ export default function AnimatedList() {
       <button onClick={handleUndo}>Undo</button>
       <div className={s["animated-list"]}>
         {
-          transitions.map(({ item, props, key }) => {
+          transitions.map(({ item, props: { height, opacity }, key }) => {
             return (
-              <animated.div className={s["item-container"]} style={props} key={key}>
-                <ListItem
-                  id={item.id}
-                  title={item.title}
-                  onClick={handleClick}
-                />
+              <animated.div className={s["item-container"]} style={{ height }} key={key}>
+                <animated.div className={s["item-content"]} style={{ boxShadow: opacity.interpolate(o => `0 4px 9px 0 rgba(0, 0, 0, ${o})`) }}>
+                  <ListItem
+                    id={item.id}
+                    title={item.title}
+                    onClick={handleClick}
+                  />
+                </animated.div>
               </animated.div>
             );
           })

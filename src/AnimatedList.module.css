@@ -8,7 +8,10 @@
 }
 
 .item-container {
-  /* height: 70px; */
+  height: 70px;
   position: relative;
   z-index: 1;
+}
+
+.item-content {
 }
